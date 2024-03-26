@@ -1,8 +1,8 @@
 *.docx
 *.o
 *.exe
-src/cmm_semantic/cmm_synx/cmm.*
-!src/cmm_semantic/cmm_synx/cmm.y
-!src/cmm_semantic/cmm_synx/cmm.l
-src/cmm_semantic/cmm_synx/lex.yy.c
-src/json_parser/_json_/lex.*
+cmm_semantic/cmm_synx/cmm.*
+!cmm_semantic/cmm_synx/cmm.y
+!cmm_semantic/cmm_synx/cmm.l
+cmm_semantic/cmm_synx/lex.yy.c
+json_syntax/_json_/lex.*
