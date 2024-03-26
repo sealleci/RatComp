@@ -1,0 +1,17 @@
+FUNCTION main :
+READ _t1
+n := _t1
+_t2 := #0
+IF n > _t2 GOTO lab1
+IF n < _t2 GOTO lab3
+WRITE _t2
+GOTO lab2
+LABEL lab3 :
+_t4 := #-1
+WRITE _t4
+GOTO lab2
+LABEL lab1 :
+_t3 := #1
+WRITE _t3
+LABEL lab2 :
+RETURN _t2

@@ -1,0 +1,84 @@
+program: extDefList
+  ;
+extDefList:extDef extDefList
+  | $
+  ;
+extDef: specifier extDecList SEMI
+  | specifier SEMI
+  | specifier funcDec compSt
+  ;
+extDecList: varDec
+  | varDec COMMA extDecList
+  ;
+specifier: TYPE
+  | structSpecifier
+  ;
+structSpecifier: STRUCT optTag LC defList RC
+  | STRUCT tag
+  | STRUCT optTag LC defList RC error
+  ;
+optTag: ID
+  | $
+  ;
+tag: ID
+  ;
+varDec: ID
+  | varDec LB INT RB
+  ;
+funcDec: ID LP varList RP
+  | ID LP RP
+  ;
+varList: paramDec COMMA varList
+  | paramDec
+  | error COMMA varList
+  | error paramDec
+  | paramDec COMMA error
+  ;
+paramDec: specifier varDec
+  ;
+compSt: LC defList stmtList RC
+  ;
+stmtList: stmt stmtList
+  | $
+  ;
+stmt: exp SEMI
+  | compSt
+  | RETURN exp SEMI
+  | IF LP exp RP stmt
+  | IF LP exp RP stmt ELSE stmt
+  | WHILE LP exp RP stmt
+  |error
+  ;
+defList: def defList
+  | $
+  ;
+def: specifier decList SEMI
+  ;
+decList: dec
+  | dec COMMA decList
+  ;
+dec: varDec
+  | varDec ASSIGNOP exp
+  ;
+exp: exp ASSIGNOP exp
+  | exp AND exp
+  | exp OR exp
+  | exp RELOP exp
+  | exp PLUS exp
+  | exp MINUS exp
+  | exp STAR exp
+  | exp DIV exp
+  | LP exp RP
+  | MINUS exp %prec NEG
+  | NOT exp
+  | ID LP args RP
+  | ID LP RP
+  | exp LB exp RB
+  | exp DOT ID
+  | ID
+  | INT
+  | FLOAT
+  ;
+args: exp COMMA args
+  | exp
+  ;

@@ -1,0 +1,36 @@
+int foo(int _i){
+	return _i;
+}
+
+int foo(){
+	return 0;
+}
+
+int dec(int _j){
+	return _j;
+}
+
+int main(){
+	int a=0;
+	//int a;
+	float c;
+	int d[10];
+
+	b=a+1;
+
+	inc(i);
+
+	dec(1,2);
+
+	a=1.1;
+
+	a+1.2;
+
+	a[0];
+
+	a(1);
+
+	d[1.2]=10;
+
+	return c;
+}

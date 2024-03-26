@@ -1,0 +1,22 @@
+@S
+S:= [LC]{CS}[RC]
+CS:= {E}
+CS:= {E}{CT}
+CS:= $
+CT:= [COMMA]{E}{CT}
+CT:= [COMMA]{E}
+E:= [STR][COLON]{W}
+E:= [STR][COLON][LB]{AC}[RB]
+E:= [STR][COLON][LC]{CS}[RC]
+AC:= {AE}
+AC:= {AE}{AES}
+AC:= $
+AE:= {W}
+AE:= [LC]{CS}[RC]
+AE:= [LB]{AC}[RB]
+AES:= [COMMA]{AE}{AES}
+AES:= [COMMA]{AE}
+W:= [STR]
+W:= [NUM]
+W:= [BOOL]
+W:= [NUL]

@@ -1,0 +1,31 @@
+struct obj
+{
+	int v;
+	int k;
+};
+int get()
+{
+	int tmp;
+	tmp=1;
+	return tmp;
+}
+int main(int arg)
+{
+	struct obj o;
+	int a[10][2];
+	int c=10;
+	int i=0;
+	while(i<c){
+		i=0;
+	}
+	if(i>0){
+		if(i>3){
+			a[i][0]=1;
+		}else{
+			a[i][1]=2;
+		}
+	}else if(i< -1){
+		o.k=3;
+	}
+	return o.k;
+}
